@@ -1,32 +1,34 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.rhap_container { background-color: #FF009900 !important; border: none !important; box-shadow: none !important; padding: 50px !important; color: #CCC !important; }
+.rhap_time  { color: #CCC !important; }
+.rhap_progress-indicator, .rhap_volume-indicator { background-color: #FF0099 !important; }
+.App-link, .active, .rhap_main-controls-button { color: #FF0099 !important; }
+
+
+.App, body { text-align: center; background-color: #161d21; }
+
+.App-logo { height: 40vmin; pointer-events: none; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  .App-logo { animation: App-logo-spin infinite 20s linear; }
 }
 
+ul li { cursor: pointer; }
+
+.p-listbox { border: none !important; }
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #161d21;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FF0099;
 }
-
-.App-link {
-  color: #61dafb;
-}
+.footer { position: fixed; bottom: 5px; left: 0px; right: 0px; font-size: 0.8rem; color: #BBB;}
+.footer span {margin: auto;}
 
 @keyframes App-logo-spin {
   from {
