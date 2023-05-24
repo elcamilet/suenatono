@@ -39,8 +39,7 @@ const itemTemplate = (option, index) => {
         <ListBox value={audioFiles[0]} options={audioFiles} onChange={handleAudioChange} optionLabel="label" optionValue="value" itemTemplate={itemTemplate} />            
       </div>
       <div className="footer">
-        <span>#RetoPWA de WebReactiva</span><br/>
-        <span>La Codificadora de Ideas</span>
+        <span>#RetoPWA de La Codificadora de Ideas para WebReactiva</span>
       </div>
     </div>
   );

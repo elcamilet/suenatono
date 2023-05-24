@@ -2,6 +2,7 @@
 .rhap_container { background-color: #FF009900 !important; border: none !important; box-shadow: none !important; padding: 50px !important; color: #CCC !important; }
 .rhap_time  { color: #CCC !important; }
 .rhap_progress-indicator, .rhap_volume-indicator { background-color: #FF0099 !important; }
+.rhap_play-pause-button { font-size: 80px !important; width: 80px !important; height: 80px !important; }
 .App-link, .active, .rhap_main-controls-button { color: #FF0099 !important; }
 
 
