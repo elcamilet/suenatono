@@ -2,7 +2,7 @@
 .rhap_container { background-color: #FF009900 !important; border: none !important; box-shadow: none !important; padding: 50px !important; color: #CCC !important; }
 .rhap_time  { color: #CCC !important; }
 .rhap_progress-indicator, .rhap_volume-indicator { background-color: #FF0099 !important; }
-.rhap_play-pause-button { font-size: 80px !important; width: 80px !important; height: 80px !important; }
+.rhap_play-pause-button { font-size: 180px !important; width: 180px !important; height: 180px !important; }
 .App-link, .active, .rhap_main-controls-button { color: #FF0099 !important; }
 
 
@@ -13,6 +13,11 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo { animation: App-logo-spin infinite 20s linear; }
 }
+
+@media only screen and (max-width: 600px) {
+  .rhap_play-pause-button { font-size: 80px !important; width: 80px !important; height: 80px !important; }
+}
+
 
 ul li { cursor: pointer; }
 

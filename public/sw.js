@@ -14,7 +14,15 @@ self.addEventListener('install', event => {
       '/audio/cant_stop_me.mp3',
       '/audio/faidherbe_square.mp3',
       '/static/js/bundle.js',
-      '/manifest.json'
+      '/manifest.json',
+      '/favicon16.png',
+      '/favicon24.png',
+      '/favicon32.png',
+      '/favicon64.png',
+      '/favicon144.png',
+      '/favicon.ico',
+      '/screenshot1.png',
+      '/screenshot2.png'
     ]);
   })());
 });

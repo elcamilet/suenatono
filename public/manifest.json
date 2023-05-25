@@ -1,6 +1,7 @@
 {
-  "short_name": "SuenaTono",
   "name": "SuenaTono",
+  "short_name": "SuenaTono",
+  "description": "#RetoPWA de La Codificadora de Ideas para WebReactiva",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,14 +9,29 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "favicon16.png",
+      "sizes": "16x16",
+      "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "favicon24.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
     }
   ],
   "start_url": "/?source=pwa",
@@ -23,17 +39,16 @@
   "display": "standalone",
   "scope": "/",
   "theme_color": "#161d21",
-  "description": "#RetoPWA de La Codificadora de Ideas para WebReactiva",
   "screenshots": [
     {
-      "src": "/images/screenshot1.png",
+      "src": "/screenshot1.png",
       "type": "image/png",
-      "sizes": "540x720"
+      "sizes": "330x580"
     },
     {
-      "src": "/images/screenshot2.jpg",
-      "type": "image/jpg",
-      "sizes": "540x720"
+      "src": "/screenshot2.png",
+      "type": "image/png",
+      "sizes": "330x580"
     }
   ]
 }
