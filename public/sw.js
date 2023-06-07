@@ -1,4 +1,5 @@
-const CACHE_NAME = `SuenaTono`;
+
+const CACHE_NAME = `CacheSuenaTono`;
 
 // Use the install event to pre-cache all initial resources.
 self.addEventListener('install', event => {
