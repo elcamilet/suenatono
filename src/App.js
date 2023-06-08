@@ -6,43 +6,39 @@ import React, { useState, useEffect } from "react";
 import { ListBox } from 'primereact/listbox';
 
 function App() {
+  // const [audio, setAudio] = useState(null);
+  // console.log('audio file: '+ audio.currentSrc);
+  
   const audioFiles = [    
     {label: "April Showers", value: '/audio/april_showers.mp3'},
     {label: "Can't Stop Me", value: '/audio/cant_stop_me.mp3'},
     {label: "Faidherbe Square", value: '/audio/faidherbe_square.mp3'},
   ];
 
-  const [data, setData] = useState(null);
 
-  useEffect(() => {
-    async function fetchData() {
+   useEffect(() => {
+    async function loadAudio() {
+      // const audioUrl = "/audio/april_showers.mp3";
+      const audioUrls = ['/audio/april_showers.mp3', '/audio/cant_stop_me.mp3', '/audio/faidherbe_square.mp3']
+      let response;
+
       try {
-        // Intenta obtener la respuesta de la caché
-        const cache = await caches.open("CacheSuenaTono");
-        const response = await cache.match("/");
-
-        // Si la respuesta está en la caché, utiliza la respuesta de la caché
-        if (response) {
-          const responseData = await response.json();
-          setData(responseData);
-          console.log("Usando datos de la caché:", responseData);
-        } else {
-          // Si no hay respuesta en la caché, realiza una solicitud fetch normal
-          const fetchResponse = await fetch("/");
-          const fetchResponseData = await fetchResponse.json();
-          setData(fetchResponseData);
-          console.log("Usando datos de la solicitud fetch:", fetchResponseData);
-
-          // Guarda la respuesta en la caché para futuras solicitudes
-          await cache.put("/", fetchResponse.clone());
-          console.log("Guardando datos en la caché");
-        }
+        // Intenta cargar el archivo de audio desde la red
+        response = await fetch(audioUrls);
       } catch (err) {
-        console.error(err);
+        // Si no se puede acceder a la red, intenta cargar el archivo de audio desde la caché
+        const cache = await caches.open("CacheSuenaTono");
+        response = await cache.match(audioUrls);
       }
+
+      // Convierte la respuesta en un objeto de audio y establece el estado del componente
+      const audioBlob = await response.blob();
+      const audioObject = new Audio(URL.createObjectURL(audioBlob));
+      audioObject.load();
+      // setAudio(audioObject);
     }
 
-    fetchData();
+    loadAudio();
   }, []);
 
   const LS_File = localStorage.getItem("audioFile");
