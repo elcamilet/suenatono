@@ -2,7 +2,7 @@ import './App.css';
 import './theme.css';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ListBox } from 'primereact/listbox';
 
 function App() {
@@ -11,6 +11,39 @@ function App() {
     {label: "Can't Stop Me", value: '/audio/cant_stop_me.mp3'},
     {label: "Faidherbe Square", value: '/audio/faidherbe_square.mp3'},
   ];
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // Intenta obtener la respuesta de la caché
+        const cache = await caches.open("CacheSuenaTono");
+        const response = await cache.match("/");
+
+        // Si la respuesta está en la caché, utiliza la respuesta de la caché
+        if (response) {
+          const responseData = await response.json();
+          setData(responseData);
+          console.log("Usando datos de la caché:", responseData);
+        } else {
+          // Si no hay respuesta en la caché, realiza una solicitud fetch normal
+          const fetchResponse = await fetch("/");
+          const fetchResponseData = await fetchResponse.json();
+          setData(fetchResponseData);
+          console.log("Usando datos de la solicitud fetch:", fetchResponseData);
+
+          // Guarda la respuesta en la caché para futuras solicitudes
+          await cache.put("/", fetchResponse.clone());
+          console.log("Guardando datos en la caché");
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   const LS_File = localStorage.getItem("audioFile");
   const LS_Label = localStorage.getItem("audioLabel");
