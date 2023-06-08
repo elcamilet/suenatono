@@ -2,44 +2,16 @@ import './App.css';
 import './theme.css';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ListBox } from 'primereact/listbox';
 
 function App() {
-  // const [audio, setAudio] = useState(null);
-  // console.log('audio file: '+ audio.currentSrc);
-  
+
   const audioFiles = [    
     {label: "April Showers", value: '/audio/april_showers.mp3'},
     {label: "Can't Stop Me", value: '/audio/cant_stop_me.mp3'},
     {label: "Faidherbe Square", value: '/audio/faidherbe_square.mp3'},
   ];
-
-
-   useEffect(() => {
-    async function loadAudio() {
-      // const audioUrl = "/audio/april_showers.mp3";
-      const audioUrls = ['/audio/april_showers.mp3', '/audio/cant_stop_me.mp3', '/audio/faidherbe_square.mp3']
-      let response;
-
-      try {
-        // Intenta cargar el archivo de audio desde la red
-        response = await fetch(audioUrls);
-      } catch (err) {
-        // Si no se puede acceder a la red, intenta cargar el archivo de audio desde la caché
-        const cache = await caches.open("CacheSuenaTono");
-        response = await cache.match(audioUrls);
-      }
-
-      // Convierte la respuesta en un objeto de audio y establece el estado del componente
-      const audioBlob = await response.blob();
-      const audioObject = new Audio(URL.createObjectURL(audioBlob));
-      audioObject.load();
-      // setAudio(audioObject);
-    }
-
-    loadAudio();
-  }, []);
 
   const LS_File = localStorage.getItem("audioFile");
   const LS_Label = localStorage.getItem("audioLabel");

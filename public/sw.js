@@ -1,11 +1,6 @@
 
 const CACHE_NAME = `CacheSuenaTono`;
-
-// Use the install event to pre-cache all initial resources.
-self.addEventListener('install', event => {
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE_NAME);
-    cache.addAll([
+const toCache = [
       '/',
       '/index.html',
       '/index.js',
@@ -24,29 +19,26 @@ self.addEventListener('install', event => {
       '/favicon.ico',
       '/screenshot1.png',
       '/screenshot2.png'
-    ]);
-  })());
+    ]
+
+    
+self.addEventListener('install', (event) => {
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => {
+    return cache.addAll(toCache);
+  }));
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith((async () => {
-    const cache = await caches.open(CACHE_NAME);
+self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  const isPrecachedRequest = toCache.includes(url.pathname);
 
-    // Get the resource from the cache.
-    const cachedResponse = await cache.match(event.request);
-    if (cachedResponse) {
-      return cachedResponse;
-    } else {
-        try {
-          // If the resource was not in the cache, try the network.
-          const fetchResponse = await fetch(event.request);
-
-          // Save the resource in the cache and return it.
-          cache.put(event.request, fetchResponse.clone());
-          return fetchResponse;
-        } catch (e) {
-          // The network failed.
-        }
-    }
-  })());
+  if (isPrecachedRequest) {
+    event.respondWith(caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(event.request.url);
+    }));
+  } else {
+    // Go to the network
+    return;
+  }
 });
+
