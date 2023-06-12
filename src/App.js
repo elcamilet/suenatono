@@ -2,19 +2,24 @@ import './App.css';
 import './theme.css';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ListBox } from 'primereact/listbox';
+import { showCustomMessage } from "chrome";
+import { request } from "navigator";
+import { setCustomMessage } from "navigator";
+
 
 function App() {
-
+  
+  const audioRef = useRef(null);
   const audioFiles = [    
     {label: "April Showers", value: '/audio/april_showers.mp3'},
     {label: "Can't Stop Me", value: '/audio/cant_stop_me.mp3'},
     {label: "Faidherbe Square", value: '/audio/faidherbe_square.mp3'},
   ];
-
   const LS_File = localStorage.getItem("audioFile");
   const LS_Label = localStorage.getItem("audioLabel");
+
   if (!LS_File) {
     localStorage.setItem("audioFile", "/audio/april_showers.mp3");
   }
@@ -23,6 +28,19 @@ function App() {
   }
   const [audioFile, setAudioFile] = useState(LS_File);
   const [audioLabel, setAudioLabel] = useState(LS_Label);
+  
+  request("screen").then((lock) => {
+    const customMessage = {
+      type: "music",
+      title: audioLabel,
+      albumArt: "favicon144.png",
+    };
+
+    setCustomMessage(customMessage);
+    showCustomMessage();
+    lock.release();
+  });
+
 
   const setStartAt = (e) => {
     e.target.currentTime = localStorage.getItem("audioStart");
@@ -66,7 +84,9 @@ function App() {
     );
   };
 
-  fetch(audioFile);
+ function handleSpeedChange(speed) {
+    audioRef.current.audio.current.playbackRate = speed;
+  }
 
   return (
     <div className="App">
@@ -74,7 +94,10 @@ function App() {
         <h1>SuenaTono</h1>
       </header>      
       <div className="container">
-        <AudioPlayer onPlay={e => setStartAt(e)} src={audioFile} preload="auto" onListen={e => handleListen(e)} listenInterval={500} header={<h1>{audioLabel}</h1>} showSkipControls={true} onClickPrevious={handlePreviousSong} onClickNext={handleNextSong} customAdditionalControls={[]} customVolumeControls={[]} />
+        <AudioPlayer ref={audioRef} onPlay={e => setStartAt(e)} src={audioFile} playbackRate={2} preload="auto" onListen={e => handleListen(e)} listenInterval={500} header={<h1>{audioLabel}</h1>} showSkipControls={true} onClickPrevious={handlePreviousSong} onClickNext={handleNextSong} customAdditionalControls={[]} customVolumeControls={[]} />
+        <button className="button" onClick={() => handleSpeedChange(1)}>1X</button>
+        <button className="button" onClick={() => handleSpeedChange(1.5)}>1.5X</button>
+        <button className="button" onClick={() => handleSpeedChange(2)}>2X</button>
         <ListBox value={audioFiles[0]} options={audioFiles} onChange={handleAudioChange} optionLabel="label" optionValue="value" itemTemplate={itemTemplate} />
       </div>
       <div className="footer">

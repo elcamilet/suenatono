@@ -2,6 +2,7 @@
   "name": "SuenaTono",
   "short_name": "SuenaTono",
   "description": "#RetoPWA de La Codificadora de Ideas para WebReactiva",
+  "version": "1.3",
   "icons": [
     {
       "src": "favicon.ico",
