@@ -4,9 +4,9 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import React, { useState, useRef } from "react";
 import { ListBox } from 'primereact/listbox';
-import { showCustomMessage } from "chrome";
-import { request } from "navigator";
-import { setCustomMessage } from "navigator";
+// import { showCustomMessage } from "chrome";
+// import { request } from "navigator";
+// import { setCustomMessage } from "navigator";
 
 
 function App() {
@@ -29,18 +29,33 @@ function App() {
   const [audioFile, setAudioFile] = useState(LS_File);
   const [audioLabel, setAudioLabel] = useState(LS_Label);
   
-  request("screen").then((lock) => {
+
+  //  TESTEAR ESTO:
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js', {
+        scope: '/',
+      });
+      console.log('SW registered');
+      
+    });
+  }
+
+  // Y ESTO:
+  navigator.wakeLock.request("screen").then((lock) => {
     const customMessage = {
       type: "music",
       title: audioLabel,
       albumArt: "favicon144.png",
     };
-
-    setCustomMessage(customMessage);
-    showCustomMessage();
-    lock.release();
+    // setCustomMessage(customMessage);
+    // showCustomMessage();
+    console.log('Lock acquired');
+    
+    lock.release(); // Desbloquear la pantalla
+  }).catch((error) => {
+    console.error(`Error al bloquear la pantalla: ${error}`);
   });
-
 
   const setStartAt = (e) => {
     e.target.currentTime = localStorage.getItem("audioStart");

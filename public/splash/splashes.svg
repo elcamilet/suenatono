@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="splashes.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.37549453"
+     inkscape:cx="822.91479"
+     inkscape:cy="1194.4249"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="1920"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#161d21;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.252333;stroke-linecap:round;stroke-linejoin:round"
+       id="rect7763"
+       width="320"
+       height="568"
+       x="38.809155"
+       y="11.442759"
+       inkscape:export-filename="/home/camilo/Nextcloud/CODE/WEBAPPs/WEBREACTIVA/RETOS/PWA/suenatono/public/splash/iphone5_splash.png"
+       inkscape:export-xdpi="94.269997"
+       inkscape:export-ydpi="94.269997" />
+    <g
+       id="g52890"
+       transform="matrix(0.39559569,0,0,0.39478018,-19.088568,7.4550788)"
+       inkscape:export-filename="/home/camilo/Nextcloud/CODE/WEBAPPs/WEBREACTIVA/RETOS/PWA/suenatono/public/splash/iphone5_splash.png"
+       inkscape:export-xdpi="94.269997"
+       inkscape:export-ydpi="94.269997">
+      <path
+         style="fill:#ff0099;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5.08413;stroke-linecap:round;stroke-linejoin:round"
+         d="m 526.75594,978.48943 c -53.68251,-3.78868 -95.28076,-18.20188 -142.20245,-49.27144 -28.64405,-18.96728 -68.61994,-58.33364 -86.30795,-84.99275 -22.22696,-33.50002 -38.65083,-71.90848 -45.41412,-106.20472 -4.19212,-21.25809 -5.90489,-81.54083 -3.01331,-106.05783 4.31141,-36.55592 24.63628,-87.52473 50.26269,-126.04381 16.38469,-24.62792 56.03878,-64.27922 80.55777,-80.55206 31.99863,-21.23681 76.13441,-40.34493 110.05592,-47.64772 20.35018,-4.38113 94.37502,-4.89178 116.77197,-0.80532 32.61371,5.94979 78.02982,25.16391 111.03261,46.97461 59.026,39.00842 101.48282,95.7783 124.09729,165.93235 10.14795,31.48058 11.4096,43.06868 10.31641,94.75778 -1.05525,49.85941 -2.91843,61.11598 -15.52461,93.75698 C 808.59432,852.89258 755.34132,912.59834 686.36872,947.65469 635.47875,973.51977 587.54638,982.78 526.75594,978.4899 Z M 514.95972,794.82186 c 39.83952,-27.53355 132.04124,-96.87396 147.8761,-111.21033 l 8.71364,-7.88904 -11.65214,-9.69683 C 631.92177,642.74376 523.57693,562.10962 503.50306,549.63134 c -5.2011,-3.2333 -10.02096,-5.31419 -10.71091,-4.62441 -2.79236,2.79239 -4.75166,91.59202 -3.69565,167.4924 1.12466,80.86 1.9434,95.12325 5.45672,95.12325 1.03673,0 10.21937,-5.76034 20.4065,-12.80072 z"
+         id="path10025" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:120.112px;line-height:1.25;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff0099;fill-opacity:1;stroke-width:3.0028"
+         x="236.65678"
+         y="285.90076"
+         id="text16262"><tspan
+           sodipodi:role="line"
+           id="tspan16260"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:120.112px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff0099;fill-opacity:1;stroke-width:3.0028"
+           x="236.65678"
+           y="285.90076">SuenaTono</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:58.1542px;line-height:1.25;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ff0099;fill-opacity:1;stroke-width:1.45386"
+         x="549.67511"
+         y="1112.0364"
+         id="text16262-7"><tspan
+           sodipodi:role="line"
+           id="tspan16260-7"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:58.1542px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ff0099;fill-opacity:1;stroke-width:1.45386"
+           x="549.67511"
+           y="1112.0364">La Codificadora de Ideas</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:58.1542px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ff0099;fill-opacity:1;stroke-width:1.45386"
+           x="549.67511"
+           y="1184.7291"
+           id="tspan45552">para WebReactiva</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:58.1542px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ff0099;fill-opacity:1;stroke-width:1.45386"
+           x="549.67511"
+           y="1257.4219"
+           id="tspan45554">#RetoPWA</tspan></text>
+    </g>
+  </g>
+</svg>
