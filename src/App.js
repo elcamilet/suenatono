@@ -15,12 +15,16 @@ function App() {
   ];
   const LS_File = localStorage.getItem("audioFile");
   const LS_Label = localStorage.getItem("audioLabel");
+  const LS_Title = localStorage.getItem("title");
 
   if (!LS_File) {
     localStorage.setItem("audioFile", "/audio/april_showers.mp3");
   }
   if (!LS_Label) {
     localStorage.setItem("audioLabel", "April Showers");
+  }
+  if (!LS_Title) {
+    localStorage.setItem("title", "April Showers");
   }
   const [audioFile, setAudioFile] = useState(LS_File);
   const [audioLabel, setAudioLabel] = useState(LS_Label);
@@ -34,20 +38,19 @@ function App() {
     });
   }
 
-  fetch('/audio/april_showers.mp3');
-  fetch('/audio/cant_stop_me.mp3');
-  fetch('/audio/faidherbe_square.mp3');
-
   const setStartAt = (e) => {
     e.target.currentTime = localStorage.getItem("audioStart");
+    document.title = localStorage.getItem("title");
   }
 
   const playAudio = (i) => {
     setAudioFile(audioFiles[i].value);
     setAudioLabel(audioFiles[i].label);
+    document.title = audioFiles[i].label;
     localStorage.setItem("audioFile", audioFiles[i].value);
     localStorage.setItem("audioLabel", audioFiles[i].label);
     localStorage.setItem("audioStart", "0");
+    localStorage.setItem("title", audioFiles[i].label);
   }
   const handleAudioChange = (e) => {
     const i = audioFiles.findIndex(el => el.value === e.target.value);

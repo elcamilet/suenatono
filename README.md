@@ -39,7 +39,7 @@ EXTRA
 
 &check; Reproducir audio con pantalla bloqueada
 
-&cross; Mostrar información de lo que se está reproduciendo (nombre, caratula) con pantalla bloqueada
+&#9851; Mostrar información de lo que se está reproduciendo (nombre, caratula) con pantalla bloqueada
 
 &check; Añadir opción de escuchar el audio a 2X (doble velocidad)
 
